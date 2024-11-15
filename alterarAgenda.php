@@ -3,7 +3,7 @@ include "funcoesAgenda.php";
 
 if (isset($_GET["editar"])) {
     $index = $_GET["editar"];
-    $usuarios = carregarUsuarios();
+    $usuarios = carregarAgenda();
 
     if (isset($usuarios[$index])) {
         $usuarioAtual = $usuarios[$index]["usuario"];
@@ -15,14 +15,14 @@ if (isset($_GET["editar"])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"]) && isset($_POST["telefone"])) {
-    $novoUsuario = $POST["usuario"];
+    $novoUsuario = $_POST["usuario"];
     $novoTelefone = $_POST["telefone"];
 
     echo $novoUsuario;
     echo "<br><br>";
     echo $novoTelefone;
 
-    alterarUsuario($index, $novoUsuario, $novoTelefone);
+    alterarAgenda($index, $novoUsuario, $novoTelefone);
     header("Location: index.php");
     exit;
 }

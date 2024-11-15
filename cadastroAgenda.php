@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"]) && isset($_
 
     $novoUsuario = $_POST["usuario"];
     $novoTelefone = $_POST["telefone"];
-    salvarUsuario($novoUsuario, $novoTelefone);
+    salvarAgenda($novoUsuario, $novoTelefone);
     echo "Usuario cadastrado com sucesso";
 }
 //processa exclusao do usuario 
@@ -40,7 +40,7 @@ if (isset($_GET["excluir"])) {
     </form>
 
     <h3>Usuários Cadastrados</h3>
-    <?php listarUsuarios(); ?>
+    <?php listarAgenda(); ?>
 
     <a href="login.php">VOLTAR</a>
 

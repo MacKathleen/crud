@@ -41,15 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2>Login de usuário</h2>
+    <h2>LOGIN DE USUÁRIO</h2>
 
     <form method="POST" action="login.php">
-        <input type="text" name="usuario" id="usuario" placeholder="digite seu usuário" required> <br>
-        <input type="password" name="senha" id="senha" placeholder="digite sua senha" required> <br>
-        <button type="submit">Entrar</button>
+        <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" required> <br>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required> <br>
+        <button type="submit">ENTRAR</button>
     </form>
 
-    <a href="cadastro.php">Não tem cadastro? Clique aqui </a>
+    <a href="cadastro.php">Não tem cadastro? Clique aqui. </a>
 </body>
 
 </html>

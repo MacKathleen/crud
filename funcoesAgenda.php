@@ -25,15 +25,15 @@ function carregarAgenda()
 
 //salvar um novo usuario no arquivo 
 
-function salvarUsuario($usuario, $telefone)
+function salvarAgenda($usuario, $telefone)
 {
     $linha = $usuario . ":" . $telefone . PHP_EOL;
-    file_put_contents("usuarios.txt", $linha, FILE_APPEND);
+    file_put_contents("agenda.txt", $linha, FILE_APPEND);
 }
 
 //listar usuarios cadastrados 
 
-function listarUsuarios()
+function listarAgenda()
 {
     $usuarios = carregarAgenda();
     echo "<ul>";
@@ -49,31 +49,31 @@ function listarUsuarios()
 
 //excluir 
 
-function excluirUsuario($index)
+function excluirAgenda($index)
 {
     $usuarios = carregarAgenda();
 
     if (isset($usuario[$index])) {
         unset($usuarios[$index]);
-        file_put_contents("usuarios.txt", "");
+        file_put_contents("agenda.txt", "");
 
         foreach ($usuarios as $user) {
-            salvarUsuario($user["usuario"], $user["telefone"]);
+            salvarAgenda($user["usuario"], $user["telefone"]);
         }
     }
 }
 
-function alterarUsuario($index, $novoUsuario, $novoTelefone)
+function alterarAgenda($index, $novoUsuario, $novoTelefone)
 {
     $usuarios = carregarAgenda();
 
     if (isset($usuarios[$index])) {
         $usuarios[$index] = ["usuario" => $novoUsuario, "telefone", $novoTelefone];
 
-        file_put_contents("usuarios.txt", "");
+        file_put_contents("agenda.txt", "");
 
         foreach ($usuarios as $user) {
-            salvarUsuario($user["usuario"], $user["telefone"]);
+            salvarAgenda($user["usuario"], $user["telefone"]);
         }
     }
 }
