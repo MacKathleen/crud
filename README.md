@@ -82,4 +82,4 @@ Este projeto foi criado para ser uma aplicação simples e funcional, e espero q
 
 ---
 
-**Boa sorte e aproveite a agenda!** 🌟
+ 🌟
