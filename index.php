@@ -11,7 +11,7 @@ if (isset($_COOKIE['usuario_logado'])) {
 
 if (isset($_GET['excluir'])) {
     $index = $_GET['excluir'];
-    excluirUsuario($index); 
+    excluirAgenda($index); 
     header("Location: index.php"); 
     exit;
 }

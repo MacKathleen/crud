@@ -40,7 +40,7 @@ function listarUsuarios()
 
     foreach ($usuarios as $index => $user) {
         echo "<li>";
-        echo htmlspecialchars($user["usuario"]) . //echo para mostrar 
+        echo htmlspecialchars($user["usuario"]) . 
             "<a href ='cadastro.php? excluir=". $index . "'> Excluir </a> | " .
             "<a href='alterar.php? editar=$index'> alterar </a></li>";
     }

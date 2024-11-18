@@ -10,11 +10,11 @@ function carregarAgenda()
 
         foreach ($dados as $linha) {
             $partes = explode(":", $linha);
-            if (count($partes) === 2) { // Verifica se o formato está correto
+            if (count($partes) === 2) { 
                 list($usuario, $telefone) = $partes;
                 $usuarios[] = ["usuario" => $usuario, "telefone" => $telefone];
             } else {
-                // Tratamento de erro: ignorar ou exibir uma mensagem para a linha incorreta
+              
                 echo "Erro: Formato incorreto na linha '$linha'.<br>";
             }
         }
@@ -40,7 +40,7 @@ function listarAgenda()
 
     foreach ($usuarios as $index => $user) {
         echo "<li>";
-        echo htmlspecialchars($user["usuario"]) . //echo para mostrar 
+        echo htmlspecialchars($user["usuario"]) . 
             "<a href ='cadastro.php? excluir=" . $index . "'> Excluir </a> | " .
             "<a href='alterar.php? editar=$index'> alterar </a></li>";
     }
@@ -68,7 +68,8 @@ function alterarAgenda($index, $novoUsuario, $novoTelefone)
     $usuarios = carregarAgenda();
 
     if (isset($usuarios[$index])) {
-        $usuarios[$index] = ["usuario" => $novoUsuario, "telefone", $novoTelefone];
+        $usuarios[$index] = ["usuario" => $novoUsuario, "telefone" => $novoTelefone];
+
 
         file_put_contents("agenda.txt", "");
 
